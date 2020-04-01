@@ -10,7 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'ArticlesController@index' )->middleware('auth');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('articles', 'ArticlesController' );
+Route::resource('/comments', 'CommentController' )->middleware('auth');
+Route::resource('/users','UserController')->middleware('auth');
+Route::resource('/likes','LikeController')->middleware('auth');
+
+
+Auth::routes();

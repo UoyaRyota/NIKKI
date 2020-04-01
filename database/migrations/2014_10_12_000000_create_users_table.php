@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('occupation')->nullable();
             $table->text('self_introduction')->nullable();
+
             $table->timestamps();
         });
     }

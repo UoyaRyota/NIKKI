@@ -20,7 +20,7 @@ class CreateArticlesTable extends Migration
             $table->unsignedbiginteger('user_id');
             $table->string('title');
             $table->string('img_article')->nullable();
-            $table->date('movie_link');
+            $table->text('movie_link')->nullable();
             $table->text('comment')->nullable();
             $table->text('method');
             $table->text('phrase');
