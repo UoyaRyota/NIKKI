@@ -26,7 +26,7 @@
     <div id="app">
     <nav class="navbar navbar-expand-md navbar-dark bg-secondary shadow-sm sticky-top">
 
-<a class="navbar-brand pl-3" href="http://127.0.0.1:8000/">
+<a class="navbar-brand pl-3" href="https://nikki-eigo-app.herokuapp.com/">
     <img src="https://res.cloudinary.com/uoyaryotanikki/image/upload/v1585791772/logo_transparent_jj7tm2.png" height=100 width=100 class="logo mr-2">NIKKI
 </a>
 
