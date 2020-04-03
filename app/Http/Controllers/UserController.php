@@ -70,12 +70,14 @@ class UserController extends Controller
     {
         
         $articles = Article::where('user_id',Auth::id())->get();
-        $likes = Like::with('user_id',Auth::id())->get();
-        $likes->load('article');
+        // $likes = Like::with('user_id',Auth::id())->get();
+        // $likes->load('article');
         
 
     
-        return view('users.show', compact('articles','likes'));
+        // return view('users.show', compact('articles','likes'));
+        return view('users.show', compact('articles'));
+
     }
 
     /**

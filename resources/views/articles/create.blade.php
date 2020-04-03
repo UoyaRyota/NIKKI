@@ -1,65 +1,13 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
 
 <!-- Left Side Of Navbar -->
-<nav class="navbar navbar-expand-md navbar-dark bg-secondary shadow-sm sticky-top">
 
-    <a class="navbar-brand pl-3" href="http://127.0.0.1:8000/">
-        <img src="" class="logo mr-2">NIKKI
-    </a>
-
-    <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- Left Side Of Navbar2 -->
-        <ul class="navbar-nav mr-auto">
-            <a href="https://japanglish.herokuapp.com/home" class="nav-item px-3 d-inline-block vertical">検索</a>
-            <a href="http://127.0.0.1:8000/" class="nav-item px-3">Movie一覧</a>
-
-        </ul>
-
-        <!-- Right Side Of Navbar -->
-        <ul class="navbar-nav ml-auto">
-            <!-- Authentication Links -->
-            @guest
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-            </li>
-            @if (Route::has('register'))
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-            </li>
-            @endif
-            @else
-            <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ Auth::user()->name }} <span class="caret"></span>
-                </a>
-
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
-
-                    　
-                    <a class="dropdown-item" href="{{ route('users.show',['user' => Auth::id() ]) }}">Profile</a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                </div>
-            </li>
-            @endguest
-        </ul>
-    </div>
-</nav>
 <div class="container">
+<form action="{{ route('articles.store', null, false) }}" method="POST" enctype="multipart/form-data">
+        {{ csrf_field( ) }}
+
 
     <div class="row text-center">
         <div class="col-md-8 offset-md-2">
@@ -67,10 +15,10 @@
 
         </div>
     </div>
-    <form action="{{ route('articles.store', null, false) }}" method="POST" enctype="multipart/form-data">
-        {{ csrf_field( ) }}
 
-        <div class="row">
+
+
+        <div class="row col-10 offset-md-1">
 
 
             <!-- 左寄せ -->
@@ -82,7 +30,7 @@
                     <input type="text" class="form-control mt-0" name='title'>
                 </div>
 
-                <img src="https://res.cloudinary.com/uoyaryotanikki/image/upload/v1585123691/xk4dbdfjm4xj2sfbbap8.jpg" width="250" height="250" class="home-profile-img">
+                <img src="https://res.cloudinary.com/uoyaryotanikki/image/upload/v1585791772/logo_transparent_jj7tm2.png" width="250" height="250" class="home-profile-img">
 
                 <div class="container my-auto">
                     <div class="form-group mt-4">
@@ -101,13 +49,13 @@
 
                 <div class="form-group">
                     <label for="method" class="mb-0">Study Method</label>
-                    <input type="method" class="form-control mt-0" name='method'>
+                    <textarea rows="10"  type="method" class="form-control mt-0" name='method'></textarea>
                 </div>
                 <p class="d-none d-md-block">※学習方法を記入してください。</p>
 
                 <div class="form-group">
                     <label for="phrase" class="mb-0">Phrase</label>
-                    <input type="phrase" class="form-control mt-0" name='phrase'>
+                    <textarea rows="20" type="phrase" class="form-control mt-0" name='phrase'></textarea>
                 </div>
                 <p class="d-none d-md-block">※動画で使われているphraseをピックアップして記入してください。</p>
 
@@ -121,8 +69,43 @@
 
 
             <!-- 右寄せ -->
-            <div class="col-md-6 my-md-auto mt-4">
-            <p class="d-none d-md-block">※動画のURLを貼り付ける方法はこちらをご参照ください。</p>
+            <div class="col-md-6 mt-4">
+            <p class="d-none d-md-block">※動画のURLを貼り付ける方法はこちらをご参照ください。
+            <button type="button" class="btn flat-border" data-toggle="modal" data-target="#modal1">
+  説明を確認する
+</button>
+<div class="modal fade" id="modal1" tabindex="-1"
+      role="dialog" aria-labelledby="label1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="label1">URLをコピペしよう</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mb-3 mt-3">
+        １　Youtubeの『共有ボタン』をクリック<br>
+        <img src="https://res.cloudinary.com/uoyaryotanikki/image/upload/v1585727495/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2020-04-01_16.44.30_wloseb.png"
+        width="100%" height="100%">
+
+        ２　『埋め込む』をクリック<br>
+        <img src="https://res.cloudinary.com/uoyaryotanikki/image/upload/v1585727496/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2020-04-01_16.44.43_zp31nu.png"
+        width="100%" height="100%">
+
+        ３　URLを画像の箇所のみコピペして貼り付ける
+        <img src="https://res.cloudinary.com/uoyaryotanikki/image/upload/v1585727505/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2020-04-01_16.45.22_a8lh8d.png"
+        width="100%" height="100%">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn flat-border" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+            
+            </p>
+
                 <div class="form-group">
                     <label for="movie_link" class="mb-0">Movie1</label>
                     <textarea class="form-control mt-0" name='movie_link'></textarea>
@@ -183,32 +166,16 @@
                       
           <div class="col-md-12 my-md-4 mt-0">
               <div class="form-group">
-                <input class="btn btn-dark form-control" type="submit" value="投稿する">
+                <input class="btn flat-border" type="submit" value="投稿する">
               </div>
             
           </div>
 
 
 </form>
-        </div>
+</div>
+
     
 
 </div>
-
-<div class="w-100 text-center">
-        <div class="col-12 p-0">
-            <footer id="main-footer" class="bg-secondary">
-                <div class="container">
-                    <div class="row">
-                        <div class="col py-5">
-                            <img src="https://res.cloudinary.com/uoyaryotanikki/image/upload/v1584966022/ya2txf4ws1ijgqaayadv.png" alt="" height="40"
-                                width="40" class="footer-logo">
-                            <h3 class="contact">NIKKI</h3>
-                            <p class="contact">Copyright© 2020 Uoya Ryota </p>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
-      </div>
 @endsection

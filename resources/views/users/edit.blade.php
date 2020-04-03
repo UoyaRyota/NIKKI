@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
  
 @section('content')
 
@@ -13,18 +13,20 @@
     @endif
   
 @auth
-<h1 class="text-center">編集画面</h1>
+<h1 class="text-center">PROFILE EDIT</h1>
      <hr/>
 
-   
 
- <form action="{{route('users.update', $user)}} " method="POST"　 enctype="multipart/form-data">
+<div class="container">
+<div class="col-md-8 offset-md-2">
+
+ <form action="{{route('users.update', $user)}} " method="POST" enctype="multipart/form-data">
         @method('PATCH')
         {{ csrf_field( ) }} 
 
-  <div class="form-group text-center">
+  <div class="form-group">
     <label for="title">名前</label>
-    <input type="text" class="name" name='name' value="{{$user->name}}">
+    <input type="text" class="form-control mt-0" name='name' value="{{$user->name}}">
   </div>
 
 <!-- あとで画像を送信する方法を確認する -->
@@ -36,35 +38,37 @@
 <input type="hidden"  name="password" value="{{ $user->password }}">
     
 <div class="form-group">
-    <label for="exampleFormControlFile1">Example file input</label>
+    <label for="exampleFormControlFile1"></label>
     <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image_profile">
   </div>
 
 
-  <div class="form-group text-center">
+  <div class="form-group">
     <label for="user_occupation">職業</label>
-    <input type="occupation" class="occupation" name='occupation' value="{{$user->occupation}}">
+    <input type="occupation" class="form-control mt-0" name='occupation' value="{{$user->occupation}}">
   </div>
 
-  <div class="form-group text-center">
+  <div class="form-group">
     <label for="email">メール</label>
-    <input type="email" class="email" name='email' value="{{$user->email}}" >
+    <input type="text" class="form-control mt-0" name='email' value="{{$user->email}}" >
   </div>
 
-  <div class="form-group text-center">
+  <div class="form-group">
     <label for="self_introduction">自己紹介</label>
-    <input type="self_introduction" class="self_introduction" name='self_introduction' value="{{$user->self_introduction}}">
+    <textarea rows="5" type="self_introduction" class="form-control mt-0" name='self_introduction' >{{$user->self_introduction}}</textarea>
   </div>
 
-  <div class=" text-center">
-  <input type="submit" class="btn" value="編集する">  
+  <div class=" text-center mt-5">
+  <input type="submit" class="btn flat-border" value="編集する">  
 
    
 
-  <a href ="{{route('articles.index')}}">記事一覧へ</a>
+  <a href ="{{route('articles.index')}}" class="btn flat-border ml-2">記事一覧へ</a>
 
 </form>
+</div>
   
 
   
 @endauth
+@endsection

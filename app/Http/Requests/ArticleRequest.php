@@ -26,7 +26,7 @@ class ArticleRequest extends FormRequest
         return [
             // 'user_id' => 'required',
             'title' => 'required',
-            'image' => 'file|image|max:400',
+            // 'image' => 'file|image|max:400',
             // 'movie_link' => 'required',
             'comment' => 'required',
             'method'=> 'required',

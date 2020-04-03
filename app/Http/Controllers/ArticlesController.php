@@ -50,6 +50,7 @@ class ArticlesController extends Controller
 
         // }
 
+
         $data = $request->all();
     if ($logo = $request->file('image')) {
         $image_name = $logo->getRealPath();
@@ -153,12 +154,13 @@ class ArticlesController extends Controller
             'height'    => $height
         ]);
      }
-
+     
         $article = Article::findOrFail($id);
         $auth_id = Auth::id();
 
         $article->user_id = $auth_id;
         $article->title   = $request->title;
+        $article->image = $imageUrl;
         $article->img_article = $request->img_article;
         $article->movie_link = $request->movie_link;
         $article->movie_link2 = $request->movie_link2;

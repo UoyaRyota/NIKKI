@@ -15,16 +15,19 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.copy.css') }}" rel="stylesheet">
+    
 </head>
 <body>
     <div id="app">
     <nav class="navbar navbar-expand-md navbar-dark bg-secondary shadow-sm sticky-top">
 
 <a class="navbar-brand pl-3" href="http://127.0.0.1:8000/">
-    <img src="" class="logo mr-2">NIKKI
+    <img src="https://res.cloudinary.com/uoyaryotanikki/image/upload/v1585791772/logo_transparent_jj7tm2.png" height=100 width=100 class="logo mr-2">NIKKI
 </a>
 
 <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -35,8 +38,8 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <!-- Left Side Of Navbar2 -->
     <ul class="navbar-nav mr-auto">
-        <a href="https://japanglish.herokuapp.com/home" class="nav-item px-3 d-inline-block vertical">検索</a>
-        <a href="http://127.0.0.1:8000/" class="nav-item px-3">Movie一覧</a>
+        <!-- <a href="https://japanglish.herokuapp.com/home" class="nav-item px-3 d-inline-block vertical">検索</a>
+        <a href="http://127.0.0.1:8000/" class="nav-item px-3">Movie一覧</a> -->
 
     </ul>
 
@@ -78,7 +81,7 @@
 </div>
 </nav>
 
-        <main class="py-4 my-5">
+        <main class="main py-4 my-5">
             @yield('content')
         </main>
     </div>
@@ -89,10 +92,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col py-2">
-                            <img src="https://res.cloudinary.com/uoyaryotanikki/image/upload/v1584966022/ya2txf4ws1ijgqaayadv.png" alt="" height="40"
-                                width="40" class="footer-logo">
-                            <h3 class="contact">NIKKI</h3>
-                            <p class="contact">Copyright© 2020 Uoya Ryota </p>
+                            <img src="https://res.cloudinary.com/uoyaryotanikki/image/upload/v1585791772/logo_transparent_jj7tm2.png" alt="" height="200"
+                                width="200" class="footer-logo">
+                            <p class="contact ">Copyright© 2020 Uoya Ryota </p>
                         </div>
                     </div>
                 </div>

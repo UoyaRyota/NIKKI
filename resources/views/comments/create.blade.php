@@ -1,10 +1,10 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
 
 
    
-<h1 class="text-center">投稿する</h1>
+<h1 class="text-center">Comment</h1>
      <hr/>
      @if ($errors->any())
         <div class="alert alert-danger">
@@ -18,9 +18,9 @@
 <form action="{{ route('comments.store') }}" method="POST">
         {{ csrf_field( ) }}
   
-  <div class="form-group text-center">
+  <div class="form-group text-center col-8 offset-md-2">
     <label for="post"></label>
-    <textarea class="form-contarol" row="5" id ="body" name="body"></textarea>
+    <textarea class="form-control-file" row="5" id ="body" name="body"></textarea>
   </div>
 
 
@@ -28,7 +28,7 @@
   <input type="hidden"  name="article_id" value="{{ $article_id }}">
   
   <div class=" text-center">
-  <input type="submit" class="btn" value="作成">  
+  <input type="submit" class="btn flat-border" value="作成">  
   </div>
 </form>
 @endsection
