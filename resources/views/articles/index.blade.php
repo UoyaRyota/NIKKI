@@ -34,18 +34,18 @@
 
         @foreach($articles as $article)
         <div class="col-md-3 mt-3 mb-4">
-        <div class="card h-100 home-card">
-        <div class="card-body">
-            <h2 class="card-title home-card-title">
-                <a href="{{ url('articles', $article->id) }}">
-                    {{ $article->title }}
-                </a>
-</div>
-<div class="card-01 h-100 home-card">
-                <img src="{{$article->image}}" width="100%" height="100%">
-</div>
-            </h2>
-        </div>
+            <div class="card h-100 home-card">
+                <div class="card-body">
+                    <h2 class="card-title home-card-title">
+                        <a href="{{ url('articles', $article->id) }}">
+                            {{ $article->title }}
+                        </a>
+                </div>
+                <div class="card-01 h-100 home-card">
+                    <img src="{{$article->image}}" width="100%" height="100%">
+                </div>
+                </h2>
+            </div>
         </div>
 
         @endforeach
