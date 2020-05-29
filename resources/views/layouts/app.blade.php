@@ -28,8 +28,8 @@
 </head>
 
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-secondary shadow-sm sticky-top">
+    <div id="app bg-light">
+        <nav class="bg-light navbar navbar-expand-md navbar-dark bg-secondary shadow-sm sticky-top">
 
             <a class="navbar-brand pl-3" href="https://nikki-eigo-app.herokuapp.com/">
                 <img src="https://res.cloudinary.com/uoyaryotanikki/image/upload/v1585791772/logo_transparent_jj7tm2.png"
@@ -54,29 +54,29 @@
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                     @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    <li class="nav-item ">
+                        <a class="nav-link text-dark" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
                     @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <a class="nav-link text-dark" href="{{ route('register') }}">{{ __('Register') }}</a>
                     </li>
                     @endif
                     @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle text-dark" href="#" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                        <div class="dropdown-menu dropdown-menu-right text-dark" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item text-black-" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
                             　
-                            <a class="dropdown-item"
+                            <a class="dropdown-item text-dark"
                                 href="{{ route('users.show',['user' => Auth::id() ]) }}">Profile</a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -94,14 +94,14 @@
         </main>
     </div>
 
-    <div class="w-100 text-center">
+    <div class="bg-light w-100 text-center">
         <div class="col-12 p-0">
-            <footer id="main-footer" class="bg-secondary">
+            <footer id="main-footer" class="bg-light">
                 <div class="container">
                     <div class="row">
                         <div class="col py-2">
                             <img src="https://res.cloudinary.com/uoyaryotanikki/image/upload/v1585791772/logo_transparent_jj7tm2.png"
-                                alt="" height="200" width="200" class="footer-logo">
+                                alt="" height="100" width="100" class="footer-logo">
                             <p class="contact ">Copyright© 2020 Uoya Ryota </p>
                         </div>
                     </div>

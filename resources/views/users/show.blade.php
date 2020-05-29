@@ -31,7 +31,7 @@
 
 
             <div>
-                <img src="{{Auth::user()->image_profile}}" height=300 width=300>
+                <img src="{{Auth::user()->image_profile}}" height=150 width=150>
             </div>
             <div class="mb-5">
                 <input type="hidden" name="password" value="{{ Auth::user()->password }}" readonly>

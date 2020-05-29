@@ -27,13 +27,13 @@
     </header>
 
 
-    <section id="feature-section">
+    <section id="feature-section ">
         <div class="container">
-            <h1 class="title-feature text-center pt-md-5 pt-3 mb-5">Feature</h1>
+            <h1 class="title-feature text-center pt-md-5  mt-5">Feature</h1>
 
-            <div class="row">
-                <div class="col-md-4 col-sm-6 mb-md-4 mt-5">
-                    <div class="item-boxes wow fadeInDown text-center p-4" data-wow-delay="0.2s">
+            <div class="row mb-5">
+                <div class="col-md-4 col-sm-6 mb-md-4 mt-1">
+                    <div class="item-boxes wow fadeInDown text-center" data-wow-delay="0.2s">
                         <div class="icon">
                             <i class="fas fa-pencil-alt"></i>
                         </div>
@@ -42,17 +42,17 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 col-sm-6 mb-md-4 mt-5">
-                    <div class="item-boxes wow fadeInDown text-center p-4" data-wow-delay="0.4s">
+                <div class="col-md-4 col-sm-6 mb-md-4">
+                    <div class="item-boxes wow fadeInDown text-center " data-wow-delay="0.4s">
                         <div class="icon">
                             <i class="fas fa-chart-bar"></i>
                         </div>
-                        <h4 class="lp-feature-topic">２. お気に入り機能</h4>
-                        <p>あなたが気に入った動画をお気に入りリストに追加することができます。</p>
+                        <h4 class="lp-feature-topic">２. YouTubeから共有</h4>
+                        <p>あなたが気に入った動画YouTubeから共有することができます。</p>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-md-4 mt-5">
-                    <div class="item-boxes wow fadeInDown text-center p-4" data-wow-delay="0.6s">
+                <div class="col-md-4 col-sm-6 mb-md-4">
+                    <div class="item-boxes wow fadeInDown text-center " data-wow-delay="0.6s">
                         <div class="icon">
                             <i class="fas fa-search"></i>
                         </div>
@@ -132,7 +132,7 @@
         <div class="container">
             <div class="row">
                 <div class="col text-center pt-5 pb-5">
-                    <a href="http://127.0.0.1:8000/register"><button class="btn btn-outline-orange mt-2 btn-size"
+                    <a href="http://127.0.0.1:8000/register"><button class="btn btn-outline-orange mt-5 btn-size"
                             type="button">Start</button></a>
                     <p class="text-center">NIKKI is an application to share recommended videos.</p>
                 </div>

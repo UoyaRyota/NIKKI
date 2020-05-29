@@ -37,11 +37,6 @@
             </div> -->
 
 
-
-
-                <!-- <label for="body">・学習動画</label>
-        <div class="body">{{ $article->movie_link }}</div> -->
-
                 <div class="form-group ml-5">
                     <label for="body" class="mb-0 h4">・Comment</label>
 
@@ -67,48 +62,33 @@
                     {{ $article->goal }}
                 </div>
 
-
-
-                <!-- <label for="body"></label>
-            <div class="body">{{ $article->comment }}</div>
-
-            <label for="body">・学習方法</label>
-            <div class="body">{{ $article->method }}</div>
-
-            <label for="body">・学習フレーズ</label>
-            <div class="body">{{ $article->phrase }}</div>
-
-            <label for="body">・ゴール</label>
-            <div class="body">{{ $article->goal }}</div> -->
-
-                <!-- <div>
-                <img src="{{ asset('storage/image/' . $article->image) }}">
-            </div> -->
-
             </article>
 
             @auth
             <div class="row mt-5">
-
                 <form action="{{ action('ArticlesController@destroy', [$article->id]) }}" method="POST">
                     <a href="{{ action('ArticlesController@edit', [$article->id]) }}"
-                        class="btn flat-border mb-2 ml-2">編集</a>
+                        class="btn flat-border mb-2 ml-5 mr-5">編集</a>
                     {{method_field('DELETE')}}
                     {{ csrf_field() }}
-                    <input type="submit" class="btn flat-border mb-2 mr-4" value="削除">
+                    <input type="submit" class="btn flat-border mb-2 mr-5 ml-3" value="削除">
                 </form>
+                </div>
 
-                <form action="{{ action('LikeController@store') }}" method="POST">
+                
+                <div class="row mt-5">
+                <form action="{{ action('LikeController@store',[$article->id]) }}" method="POST">
                     {{ csrf_field() }}
                     <input type="hidden" name="article_id" value="{{ $article->id }}">
-                    <!-- <a href="{{ route('likes.store',['article_id'=> $article->id]) }}"class="btn btn-primary" >お気に入り</a> -->
+                    <a href="{{ route('likes.store',['article_id'=> $article->id]) }}" class="btn flat-border mb-2 ml-5 mr-4" >お気に入り</a>
                 </form>
                 @endauth
                 <a href="{{ route('articles.index') }}" class="btn flat-border  mb-2 ">
                     一覧へ戻る
                 </a>
+                </div>
 
-            </div>
+            
         </div>
 
 
@@ -196,7 +176,7 @@
 </div>
 
 <div class="container">
-    <div class="row">
+    <div class="row border bg-white">
 
         <!-- 記事に対するコメント -->
         @foreach($article->comments as $comment)
@@ -211,9 +191,11 @@
 </div>
 
 <div class="row">
-    <div class="col-12">
+    
+
         <a href="{{ route('comments.create', ['article_id' => $article-> id]) }} "
             class="btn flat-border  offset-5 mt-5 mb-5">コメントする</a>
-    </div>
+   
+            
 </div>
 @endsection

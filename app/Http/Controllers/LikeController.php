@@ -52,7 +52,7 @@ class LikeController extends Controller
         $like->save();
  
         return view('articles.show', compact('article','countLikes'));
-        //return redirect()->route
+        // return redirect()->route
 
     }
 
