@@ -38,7 +38,7 @@
                 <div class="card-body bg-white">
                     <h2 class="card-title pt-2 home-card-title">
                         <div class="card-01 h-100 home-card">
-                            <img src="{{$article->image}}" width="100%" height="100%">
+                            <img src="{{$article->image}}" width="100%" height="300">
                         </div>
                         <a href="{{ url('articles', $article->id) }}" >
                             {{ $article->title }}
