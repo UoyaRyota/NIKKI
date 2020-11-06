@@ -4,10 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
@@ -17,13 +15,14 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-
-
     <!-- Styles -->
-    <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://nikki-eigo-app.herokuapp.com/css/app.css">
     <link rel="stylesheet" type="text/css" href="https://nikki-eigo-app.herokuapp.com/css/app.copy.css">
-    <!-- <link href="{{ asset('css/app.copy.css') }}" rel="stylesheet"> -->
+    <link href="{{ asset('css/app.copy.css') }}" rel="stylesheet">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 </head>
 
@@ -32,7 +31,7 @@
         <nav class="bg-light navbar navbar-expand-md navbar-dark bg-secondary shadow-sm sticky-top">
 
             <a class="navbar-brand pl-3" href="https://nikki-eigo-app.herokuapp.com/">
-                <img src="https://res.cloudinary.com/uoyaryotanikki/image/upload/v1585791772/logo_transparent_jj7tm2.png"
+                <img src="https://res.cloudinary.com/uoyaryotanikki/image/upload/v1604412091/ryud9yb5rcdwulymagvj.png"
                     height=100 width=100 class="logo mr-2">NIKKI
             </a>
 
@@ -55,7 +54,7 @@
                     <!-- Authentication Links -->
                     @guest
                     <li class="nav-item ">
-                        <a class="nav-link text-dark" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link text-dark " href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
                     @if (Route::has('register'))
                     <li class="nav-item">
@@ -100,8 +99,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col py-2">
-                            <img src="https://res.cloudinary.com/uoyaryotanikki/image/upload/v1585791772/logo_transparent_jj7tm2.png"
-                                alt="" height="100" width="100" class="footer-logo">
+                            <img src="https://res.cloudinary.com/uoyaryotanikki/image/upload/v1604412091/ryud9yb5rcdwulymagvj.png"
+                                alt="" height="30" width="70" class="footer-logo mb-3">
                             <p class="contact ">Copyright© 2020 Uoya Ryota </p>
                         </div>
                     </div>

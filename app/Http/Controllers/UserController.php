@@ -10,7 +10,6 @@ use JD\Cloudder\Facades\Cloudder;
 use App\Article;
 use App\Like;
 
-
 class UserController extends Controller
 {
     /**
@@ -41,7 +40,6 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
-        
         $user = new User;
         $auth_id = Auth::id();
 
@@ -68,8 +66,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        
-        $articles = Article::where('user_id',Auth::id())->get();
+        $articles = Article::where('user_id', Auth::id())->get();
         // $likes = Like::with('user_id',Auth::id())->get();
         // $likes->load('article');
         
@@ -77,7 +74,6 @@ class UserController extends Controller
     
         // return view('users.show', compact('articles','likes'));
         return view('users.show', compact('articles'));
-
     }
 
     /**
@@ -88,10 +84,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-
         $user = User::find($id);
         
-        return view('users.edit',compact('user'));
+        return view('users.edit', compact('user'));
     }
 
     /**
@@ -103,23 +98,23 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, $id)
     {
-    if ( $request->file('image_profile') ){
-        $data = $request->all();
-        if ($logo = $request->file('image_profile')) {
-            $image_name = $logo->getRealPath();
-            // Cloudinaryへアップロード
-            Cloudder::upload($image_name, null);
+        if ($request->file('image_profile')) {
+            $data = $request->all();
+            if ($logo = $request->file('image_profile')) {
+                $image_name = $logo->getRealPath();
+                // Cloudinaryへアップロード
+                Cloudder::upload($image_name, null);
            
             
-            // 直前にアップロードした画像のユニークIDを取得します。
-            $publicId = Cloudder::getPublicId();
-            // URLを生成します
-            $logoUrl = Cloudder::show($publicId, [
+                // 直前にアップロードした画像のユニークIDを取得します。
+                $publicId = Cloudder::getPublicId();
+                // URLを生成します
+                $logoUrl = Cloudder::show($publicId, [
                 'width'     => 500,
                 'height'    => 500
             ]);
+            }
         }
-    }
     
 
         $user = User::findOrFail($id);
@@ -131,7 +126,7 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->self_introduction= $request->self_introduction;
 
-        if ( $request->file('image_profile') ){        
+        if ($request->file('image_profile')) {
             $user->image_profile = $logoUrl;
         }
         
@@ -140,9 +135,7 @@ class UserController extends Controller
 
         
       
-        return view('users.edit',compact('user'));
-
-        
+        return view('users.edit', compact('user'));
     }
 
     /**

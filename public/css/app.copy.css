@@ -1,6 +1,76 @@
 
 
 /* LP */
+
+.submit{
+  margin:100px;
+  padding-left: 160px;
+}
+
+#how{
+  margin:100px;
+}
+/* BTN CSS */
+.nav-link{
+  color:black !important;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.nav-link:hover{
+  background-color: transparent;
+  border: 2px solid black;
+  color:black !important;
+  border-radius: 10px;
+}
+
+.submit-btn{
+  background: transparent;
+  color: #3169d1 !important;
+  -webkit-transition: all 0.7s ease-out;
+  transition: all 0.7s ease-out;
+  background: -webkit-linear-gradient(180deg, rgba(49,105,209,0.8), rgba(132, 179, 252, 0.8), rgba(205, 200, 252, 0), rgba(205, 200, 252, 0));
+  background: -webkit-linear-gradient(right, rgba(49,105,209,0.8), rgba(132, 179, 252, 0.8), rgba(205, 200, 252, 0), rgba(205, 200, 252, 0));
+  background: linear-gradient(270deg, rgba(49,105,209,0.8), rgba(132, 179, 252, 0.8), rgba(205, 200, 252, 0), rgba(205, 200, 252, 0));
+  background-position: 1% 50%;
+  background-size: 300% 300%;
+  border: none;
+  border: 1px solid #3169d1;
+  border-radius: 10px;
+  padding: 10px 30px;
+}
+
+.submit-btn:hover{
+  background-position: 99% 50%;
+  color: #fff !important;
+  border: 1px solid rgba(205, 200, 252, 0);
+}
+
+section{
+  margin:100px 0px;
+}
+
+.section-message{
+  margin-top:500px;
+}
+
+.how-to-use{
+  margin-top:100px;
+  margin-left: 50px;
+}
+.how-to-use2{
+  margin-top:200px;
+  margin-left: 50px;
+}
+.clear::after{
+  content:"";
+  clear: both;
+  display: block;
+}
+
+
 .logo{
   height:35px;
   width:120px;
@@ -14,8 +84,20 @@
 }
 
 .btn-outline-light {
-  color:black;
-  border-color:black;
+    background-color: white;
+    border: 2px solid white;
+    color:black !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+.btn-outline-light:hover{
+  background-color: black;
+  border: 2px solid black;
+  color: white !important;
+  border-radius: 20px;
 }
 
 .card-title{
@@ -34,7 +116,7 @@
 
 
 .dark-overlay{
-  background-image: url(https://res.cloudinary.com/uoyaryotanikki/image/upload/v1585884735/anna-kolosyuk-D5nh6mCW52c-unsplash_tmo6pi.jpg);  
+  background-image: url(https://res.cloudinary.com/uoyaryotanikki/image/upload/v1604410916/touxwsqxtilwqbkkjhyb.jpg);  
   margin-top:100px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -44,14 +126,6 @@
 .item-boxes{
   margin-top: 50px;
 }
-
-
-
-/* body {
-  background-image: url(https://res.cloudinary.com/uoyaryotanikki/image/upload/v1590656953/sincerely-media-FPrniQ84dEk-unsplash_y0hdge.jpg);   
-  object-fit: cover;
-} */
-
 
 
 .btn.flat-border{
@@ -64,15 +138,130 @@
   transition: .4s;
 }
 
-/* .form-control-file{
-  display: inline-block;
-  padding: 0.3em 1em;
-  text-decoration: none;
-  color: black;
-  border: solid 2px black;
-  border-radius: 3px;
-  transition: .4s;
-} */
+.down-to-top {
+  opacity: 0.1;
+  transform: translateY(20px);
+  transition: all 1s;
+}
+.down-to-top.scrollin {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.img-wrap {
+  width: 800px;
+  position: relative;
+}
+
+.img-wrap img {
+  width:100%;
+  max-width: 500px;
+  position: absolute;    
+  height: 300px;
+}
+
+.img-wrap2 {
+  width: 800px;
+  position: relative;
+}
+
+.img-wrap2 img {
+  width:100%;
+  max-width: 500px;
+  position: absolute;    
+  height: 300px;
+}
+
+.box .bgImg {
+  position   : absolute;
+  top        : 0;
+  left       : 0;
+  bottom     : 0;
+  right      : 0;
+  opacity    : 0;
+  animation  : bgAnime 20s infinite;   /* 4画像 × 各5s = 20s */
+}
+
+/* --- 段差で背景画像のアニメーションを実行 ----------------- */
+.box .src1 {
+  background-image : url(/img/emma-simpson-mNGaaLeWEp0-unsplash.jpg);   /* 背景の画像を指定 */
+  background-size: cover;
+  height: 700px;
+}
+.box .src2 {
+  background-image : url(/img/mathew-schwartz-8rj4sz9YLCI-unsplash.jpg);   /* 背景の画像を指定 */
+  animation-delay  : 5s;
+  background-size: cover;
+  height: 700px;
+}
+.box .src3 {
+  background-image : url(/img/online-marketing-hIgeoQjS_iE-unsplash.jpg);   /* 背景の画像を指定 */
+  animation-delay  : 10s;
+  background-size: cover;
+  height: 700px;
+}
+.box .src4 {
+  background-image : url(/img/jesper-aggergaard-CEM52sAHR80-unsplash.jpg);   /* 背景の画像を指定 */
+  animation-delay  : 15s;
+  background-size: cover;
+  height: 700px;
+}
+
+@keyframes bgAnime {
+   0% { opacity: 0; }
+   5% { opacity: 1; }
+  25% { opacity: 1; }
+  30% { opacity: 0; }
+ 100% { opacity: 0; }
+}
+
+
+.scroll-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 77%;
+}
+.scroll-btn a {
+background: #666 !important;
+text-decoration: none;
+color: #fff;
+width: 100px;
+padding: 30px 0;
+text-align: center;
+display: block;
+border-radius: 5px;
+}
+
+.scroll-btn a:hover {
+text-decoration: none;
+background: #999;
+}
+
+
+#page-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 77%;
+  z-index: 10;
+}
+#page-top a {
+background: #666;
+text-decoration: none;
+color: #fff;
+width: 100px;
+padding: 30px 0;
+text-align: center;
+display: block;
+border-radius: 5px;
+}
+
+#page-top a:hover {
+text-decoration: none;
+background: #999;
+}
 
 
 
@@ -116,63 +305,3 @@ home-card {
 
 }
 
-
-/* user.show.edit /article.create */
-/* div.wrap {
-  width: 500px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  vertical-align: middle;
-}
-
-div.wrap div {
-  position: relative;
-  margin: 50px 0;
-}
-
-label {
-  position: absolute;
-  top: 0;
-  font-size: 30px;
-  margin: 10px;
-  padding: 0 10px;
-  background-color: white;
-  -webkit-transition: top .2s ease-in-out, 
-                      font-size .2s ease-in-out;
-  transition: top .2s ease-in-out, 
-              font-size .2s ease-in-out;
-}
-
-.active {
-  top: -25px;
-  font-size: 20px;
-}
-
-input[type=text] {
-  width: 100%;
-  padding: 20px;
-  border: 1px solid black;
-  font-size: 20px;
-  background-color: white;
-  color: black;
-} 
-
-input[type=text]:focus {
-  outline: none;
-}
-
-textarea[type=text] {
-  width: 100%;
-  padding: 20px;
-  border: 1px solid black;
-  font-size: 20px;
-  background-color: white;
-  color: black;
-} 
-
-textarea[type=text]:focus {
-  outline: none;
-}
- */

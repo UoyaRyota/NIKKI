@@ -49661,8 +49661,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/uotaniryouta/Desktop/NIKKI/nikki/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/uotaniryouta/Desktop/NIKKI/nikki/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/uotaniryouta/dev/nikki/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/uotaniryouta/dev/nikki/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
