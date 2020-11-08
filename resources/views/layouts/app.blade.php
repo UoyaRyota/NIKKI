@@ -18,8 +18,8 @@
 
     <!-- Styles -->
     <link href="/css/app.css'" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://nikki-eigo-app.herokuapp.com/css/app.css">
-    <link rel="stylesheet" type="text/css" href="https://nikki-eigo-app.herokuapp.com/css/app.copy.css">
+    <!-- <link rel="stylesheet" type="text/css" href="https://nikki-eigo-app.herokuapp.com/css/app.css">
+    <link rel="stylesheet" type="text/css" href="https://nikki-eigo-app.herokuapp.com/css/app.copy.css"> -->
     <link href="/css/app.copy.css" rel="stylesheet">
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
