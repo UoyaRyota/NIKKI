@@ -27,11 +27,10 @@ class UserRequest extends FormRequest
             'name' => 'required',
             // 'img_name' => 'required',
             // 'password' => 'required'
-            'occupation'=> 'required',
+            // 'occupation'=> 'required',
             'email' => 'required',
             'self_introduction'=> 'required',
             // 'image_profile' =>'required'
-
             // 'post'=> 'required',
             // 'favorite'=> 'required',
         ];

@@ -5,71 +5,77 @@
 <body>
 
     <header id="home-section">
-        <div class="dark-overlay">
-            <div class="home-inner container py-5">
-                <div class="row">
-                    <div class="col text-center">
-                        <h3 class="text-center mb-0 title-message">Share personally created albums.</h3>
-                        <h1 class="text-center my-md-5 my-3 lp-home-title title-message">『From person to person』</h1>
-
-                        <!-- <br class="d-none d-sm-block"> -->
-                        <!-- http://nikki-eigo-app.herokuapp.com/login -->
-
-                        <a href="">
-                            <button class="btn lp-btn btn-outline-light mt-md-2 btn-size" type="button">ログイン</button>
-                        </a><br>
-                        <a href="">
-                            <button class="btn lp-btn btn-outline-light mt-2 btn-size" type="button">新規会員登録</button>
-                        </a><br>
+        <div class="box">
+            <div class="dark-overlay">
+                <div class="home-inner container py-5">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h3 class="text-center mb-0 title-message">Share personally created albums.</h3>
+                            <h1 class="text-center my-md-5 my-3 lp-home-title title-message">『From person to person』</h1>
+    
+                            <!-- <br class="d-none d-sm-block"> -->
+                            <!-- http://nikki-eigo-app.herokuapp.com/login -->
+    
+                            <a href="">
+                                <button class="btn lp-btn btn-outline-light mt-md-2 btn-size" type="button">ログイン</button>
+                            </a><br>
+                            <a href="">
+                                <button class="btn lp-btn btn-outline-light mt-2 btn-size" type="button">新規会員登録</button>
+                            </a><br>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+
+            </div>
+
 
 
     <section id="feature-section ">
-        <div class=".down-to-top container">
-            <h1 class="title-feature text-center pt-md-5  mt-5">Feature</h1>
-
-            <div class="row mb-5">
-                <div class="col-md-4 col-sm-6 mb-md-4 mt-1card shadow transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-10">
-                    <div class="item-boxes wow fadeInDown text-center " data-wow-delay="0.2s">
-                        <div class="icon">
-                            <i class="fas fa-pencil-alt"></i>
-                        </div>
-                        <h4 class="lp-feature-topic ">1.英語のフレーズを動画で学習</h4>
-                        <p>英語学習における日常生活で実用可能なフレーズを動画を簡単に確認できるアプリケーションです。</p>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6 mb-md-4">
-                    <div class="item-boxes wow fadeInDown text-center " data-wow-delay="0.4s">
-                        <div class="icon">
-                            <i class="fas fa-chart-bar"></i>
-                        </div>
-                        <h4 class="lp-feature-topic">２. YouTubeから共有</h4>
-                        <p>あなたが気に入った動画YouTubeから共有することができます。</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 mb-md-4">
-                    <div class="item-boxes wow fadeInDown text-center " data-wow-delay="0.6s">
-                        <div class="icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <h4 class="lp-feature-topic">３. 動画に要約が記載</h4>
-                        <p>投稿者がまとめた動画には要約が書かれています。時間が無い時も要約を確認しスキマ時間で学習できます。</p>
-                    </div>
-                </div>
-
+        <div class="container">
+               <h1 class="title feature text-center pt-md-5  my-5">Feature</h1>
+           
+               
+                 <div class="card-deck">
+     <div class="card-box d-flex justify-content-between mt-6">
+         <div class="card">
+           <img class="card-img-top img-thumbnail  py-0 px-0" src="https://res.cloudinary.com/uoyaryotanikki/image/upload/v1604631513/tj3psk0eis9ojmcigu7o.jpg" alt="Card image cap">
+           <div class="card-body bg-white rounded-bottom">
+             <h5 class="card-title">1.英語のフレーズを動画で学習</h5>
+             <p class="card-text">英語学習における日常生活で実用可能なフレーズを動画を簡単に確認できるアプリケーションです。</p>
+             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+           </div>
+         </div>
+         <div class="card">
+           <img class="card-img-top img-thumbnail py-0 px-0" src="https://res.cloudinary.com/uoyaryotanikki/image/upload/v1604631000/na3zhxa3e1edfp40dxab.jpg" alt="Card image cap">
+           <div class="card-body bg-white rounded-bottom">
+             <h5 class="card-title">２. YouTubeから共有</h5>
+             <p class="card-text">あなたが気に入った動画YouTubeから共有することができます。</p>
+             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+           </div>
+         </div>
+         <div class="card">
+           <img class="img-thumbnail py-0 px-0" src="https://res.cloudinary.com/uoyaryotanikki/image/upload/v1604631066/wrwnrkmdt0ejyf8yajte.jpg" alt="Card image cap">
+           <div class="card-body bg-white rounded-bottom">
+             <h5 class="card-title">３. 動画に要約が記載</h5>
+             <p class="card-text">投稿者がまとめた動画には要約が書かれています。時間が無い時も要約を確認しスキマ時間で学習できます。</p>
+             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+           </div>
+         </div>
+       </div>
+           
             </div>
+
+</div>
+
+
         </div>
     </section>
 
 
     <section class="how-to-use">
         <div class="container clear">
-            <h3 class="title-feature text-center pt-md-5 pt-3 mb-5">HOW TO USE</h3>
+            <h3 class="title how-to-use text-center pt-md-5 pt-3 mb-5 mr-5">HOW TO USE</h3>
             <div class="row">
                 <div class="col-md-6 mb-6">
                     <div class="item-boxes">
@@ -169,6 +175,7 @@
                 integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
                 crossorigin="anonymous"></script>
                 <script type="text/javascript" src="jquery-1.9.0.min.js"></script>
+                
                 <script>$(function(){
                 $(window).scroll(function (){
                     $('.left-to-right, .down-to-top').each(function(){
@@ -217,6 +224,7 @@
     });
 });
 </script>
+
 
 
 

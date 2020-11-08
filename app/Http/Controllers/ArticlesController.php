@@ -19,7 +19,7 @@ class ArticlesController extends Controller
     public function index()
     {
         $articles = Article::all();
- 
+        $articles = Article::orderBy('created_at', 'desc')->paginate(9);
         return view('articles.index', [
             'articles' => $articles,
         ]);
@@ -32,7 +32,6 @@ class ArticlesController extends Controller
      */
     public function create()
     {
-
         return view('articles.create');
     }
 
@@ -52,20 +51,20 @@ class ArticlesController extends Controller
 
 
         $data = $request->all();
-    if ($logo = $request->file('image')) {
-        $image_name = $logo->getRealPath();
-        // Cloudinaryへアップロード
-        Cloudder::upload($image_name, null);
+        if ($logo = $request->file('image')) {
+            $image_name = $logo->getRealPath();
+            // Cloudinaryへアップロード
+            Cloudder::upload($image_name, null);
        
         
-        // 直前にアップロードした画像のユニークIDを取得します。
-        $publicId = Cloudder::getPublicId();
-        // URLを生成します
-        $logoUrl = Cloudder::show($publicId, [
+            // 直前にアップロードした画像のユニークIDを取得します。
+            $publicId = Cloudder::getPublicId();
+            // URLを生成します
+            $logoUrl = Cloudder::show($publicId, [
             'width'     => 500,
             'height'    => 500
         ]);
-    }
+        }
 
         $article = new Article;
         $auth_id = Auth::id();
@@ -89,10 +88,10 @@ class ArticlesController extends Controller
         $article->phrase = $request->phrase;
         $article->goal = $request->goal;
          
-            // if( $request->file('image')){
-            //     $filename = $request->file('image')->store('public/image');
-            //     $article->image = basename($filename);
-            // }
+        // if( $request->file('image')){
+        //     $filename = $request->file('image')->store('public/image');
+        //     $article->image = basename($filename);
+        // }
 
          
         $article->save();
@@ -125,9 +124,8 @@ class ArticlesController extends Controller
      */
     public function edit($id)
     {
-        
         $article = Article::find($id);
-        return view('articles.edit',compact('article'));
+        return view('articles.edit', compact('article'));
     }
 
     /**
@@ -137,23 +135,22 @@ class ArticlesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ArticleRequest $request,$id)
+    public function update(ArticleRequest $request, $id)
     {
-
         $data = $request->all();
-    if ($image = $request->file('image')) {
-        $image_pass = $image->getRealPath();
-        // Cloudinaryへアップロード
-        Cloudder::upload($image_pass, null);
-        list($width, $height) = getimagesize($image_pass);
-        // 直前にアップロードした画像のユニークIDを取得します。
-        $image_id = Cloudder::getPublicId();
-        // URLを生成します
-        $imageUrl = Cloudder::show($image_id, [
+        if ($image = $request->file('image')) {
+            $image_pass = $image->getRealPath();
+            // Cloudinaryへアップロード
+            Cloudder::upload($image_pass, null);
+            list($width, $height) = getimagesize($image_pass);
+            // 直前にアップロードした画像のユニークIDを取得します。
+            $image_id = Cloudder::getPublicId();
+            // URLを生成します
+            $imageUrl = Cloudder::show($image_id, [
             'width'     => $width,
             'height'    => $height
         ]);
-     }
+        }
      
         $article = Article::findOrFail($id);
         $auth_id = Auth::id();
@@ -184,14 +181,14 @@ class ArticlesController extends Controller
         // dd($article);
         return redirect()->route('articles.index');
 
-        // $rules = [    
+        // $rules = [
         //     'title' => 'required',
         //     'method'=> 'required',
         //     'phrase' => 'required',
         //     'goal'=> 'required',
         // ];
 
-        // $validated = $this->validate($request, $rules);  
+        // $validated = $this->validate($request, $rules);
 
         // Article::create($validated);
         // return redirect('articles')>with('message', '編集しました。');
@@ -209,6 +206,6 @@ class ArticlesController extends Controller
  
         $article->delete();
  
-        return redirect('articles')->with('message','記事を削除しました。');
+        return redirect('articles')->with('message', '記事を削除しました。');
     }
 }

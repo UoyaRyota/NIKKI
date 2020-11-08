@@ -14,6 +14,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -54,11 +55,11 @@
                     <!-- Authentication Links -->
                     @guest
                     <li class="nav-item ">
-                        <a class="nav-link text-dark " href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link text-dark " href="{{ route('login') }}"><i class="fas fa-sign-in-alt mr-1"></i>{{ __('ログイン') }}</a>
                     </li>
                     @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <a class="nav-link text-dark" href="{{ route('register') }}"><i class="fas fa-address-card mr-1"></i>{{ __('登録') }}</a>
                     </li>
                     @endif
                     @else
@@ -71,12 +72,13 @@
                         <div class="dropdown-menu dropdown-menu-right text-dark" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item text-black-" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                                 <i class="fas fa-sign-in-alt mr-1"></i>
+                                {{ __('ログアウト') }}
                             </a>
 
                             　
                             <a class="dropdown-item text-dark"
-                                href="{{ route('users.show',['user' => Auth::id() ]) }}">Profile</a>
+                                href="{{ route('users.show',['user' => Auth::id() ]) }}"><i class="fas fa-address-book mr-2"></i>プロフィール</a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
@@ -88,17 +90,17 @@
             </div>
         </nav>
 
-        <main class="main py-4 my-5">
+        <main class="main">
             @yield('content')
         </main>
     </div>
 
-    <div class="bg-light w-100 text-center">
+    <div class="bg-light w-100 text-center clear">
         <div class="col-12 p-0">
             <footer id="main-footer" class="bg-light">
                 <div class="container">
                     <div class="row">
-                        <div class="col py-2">
+                        <div class="col py-2 mt-4">
                             <img src="https://res.cloudinary.com/uoyaryotanikki/image/upload/v1604412091/ryud9yb5rcdwulymagvj.png"
                                 alt="" height="30" width="70" class="footer-logo mb-3">
                             <p class="contact ">Copyright© 2020 Uoya Ryota </p>

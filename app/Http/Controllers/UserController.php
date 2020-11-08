@@ -64,9 +64,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
         $articles = Article::where('user_id', Auth::id())->get();
+        $articles = Article::orderBy('created_at', 'desc')->where('user_id', $user->id)->paginate(9);
         // $likes = Like::with('user_id',Auth::id())->get();
         // $likes->load('article');
         
@@ -117,6 +118,7 @@ class UserController extends Controller
         }
     
 
+        $articles = Article::where('user_id', Auth::id())->get();
         $user = User::findOrFail($id);
 
         $user->name   = $request->name;
@@ -135,7 +137,7 @@ class UserController extends Controller
 
         
       
-        return view('users.edit', compact('user'));
+        return view('users.show', compact('user', 'articles'));
     }
 
     /**
