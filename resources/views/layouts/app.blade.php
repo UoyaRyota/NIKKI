@@ -17,10 +17,9 @@
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
     <!-- Styles -->
-    <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
-    <link rel="stylesheet" type="text/css" href="https://nikki-eigo-app.herokuapp.com/css/app.css">
-    <link rel="stylesheet" type="text/css" href="https://nikki-eigo-app.herokuapp.com/css/app.copy.css">
-    <!-- <link href="{{ asset('css/app.copy.css') }}" rel="stylesheet"> -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+   
+    <link href="{{ asset('css/app.copy.css') }}" rel="stylesheet">
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -45,8 +44,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar2 -->
                 <ul class="navbar-nav mr-auto">
-                    <!-- <a href="https://japanglish.herokuapp.com/home" class="nav-item px-3 d-inline-block vertical">検索</a>
-        <a href="http://127.0.0.1:8000/" class="nav-item px-3">Movie一覧</a> -->
+                
 
                 </ul>
 
